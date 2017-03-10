@@ -1,0 +1,15 @@
+ie-respond:
+  header: true
+  version: 1.0
+  js:
+    dist/js/polyfill/html5-respond.js: { weight: -22, browsers: { IE: 'lte IE 8', '!IE': false } }
+
+global-styling:
+  version: 1.0
+  css:
+    theme:
+      dist/css/styles.css: {}
+  js:
+    dist/js/script.js: {}
+  dependencies:
+    - core/jquery

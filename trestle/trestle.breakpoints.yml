@@ -1,0 +1,18 @@
+trestle.mobile:
+  label: Mobile
+  mediaQuery: 'all and (max-width: 767px)'
+  weight: 0
+  multipliers:
+    - 1x
+trestle.tablet:
+  label: Tablet
+  mediaQuery: 'all and (min-width: 768px) and (max-width: 959px)'
+  weight: 2
+  multipliers:
+    - 1x
+trestle.desktop:
+  label: Desktop
+  mediaQuery: 'all and (min-width: 960px)'
+  weight: 5
+  multipliers:
+    - 1x

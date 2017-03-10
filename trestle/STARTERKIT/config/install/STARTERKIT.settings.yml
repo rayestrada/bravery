@@ -1,0 +1,4 @@
+features:
+  logo:
+    path: 'themes/custom/STARTERKIT/logo.png'
+    use_default: false

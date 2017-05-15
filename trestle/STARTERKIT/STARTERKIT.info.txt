@@ -1,4 +1,4 @@
-name: Trestle Subtheme Starter Kit
+name: STARTERKIT
 type: theme
 description: This is a custom subtheme reinforced by Trestle.
 core: 8.x

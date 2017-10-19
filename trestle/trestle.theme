@@ -1,6 +1,0 @@
-<?php
-/**
- * THEME SPECIFIC PREPROCESS FUNCTIONS
- */
-
-require_once dirname(__FILE__) . '/includes/theme.inc';

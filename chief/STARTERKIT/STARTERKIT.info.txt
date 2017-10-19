@@ -1,0 +1,31 @@
+name: STARTERKIT
+type: theme
+description: This is a custom subtheme of Chief.
+core: 8.x
+version: '8.x-1.0'
+
+# Defines the base theme for templates and classes
+base theme: chief
+
+# Defines libraries group in which we can add css/js.
+libraries:
+  - STARTERKIT/global-styling
+
+# Removes classy styles from theme
+libraries-override:
+  core/html5shiv: false
+
+# Regions
+regions:
+  header: Header
+  navigation: 'Navigation Bar'
+  highlighted: Highlighted
+  content: Content
+  sidebar_first: 'First sidebar'
+  sidebar_second: 'Second sidebar'
+  footer: Footer
+  bottom: 'Page bottom'
+
+# define custom css for wysiwyg
+#ckeditor_stylesheets:
+#  - dist/css/wysiwyg.css

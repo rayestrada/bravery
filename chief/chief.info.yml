@@ -1,0 +1,25 @@
+name: Chief
+type: theme
+description: Custom Chief theme based on Classy
+core: 8.x
+version: '8.x-1.0'
+
+# Defines the base theme for templates and classes, but we will remove the stylesheets
+base theme: classy
+
+# Removes classy styles from theme
+libraries-override:
+  classy/base: false
+  system/base: false
+  core/normalize: false
+
+# Regions
+regions:
+  header: Header
+  navigation: 'Navigation Bar'
+  highlighted: Highlighted
+  content: Content
+  sidebar_first: 'First sidebar'
+  sidebar_second: 'Second sidebar'
+  footer: Footer
+  bottom: 'Page bottom'

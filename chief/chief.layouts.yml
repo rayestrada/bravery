@@ -1,0 +1,13 @@
+example:
+  label: Example Layout
+  category: Example
+  path: layouts/example
+  #css: example.css
+  template: example
+  regions:
+    title:
+      label: Title
+    primary:
+      label: Primary Content
+    sidebar:
+      label: Sidebar

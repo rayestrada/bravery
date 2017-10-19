@@ -1,0 +1,7 @@
+<?php
+/**
+ * THEME SPECIFIC PREPROCESS FUNCTIONS
+ */
+
+// Place your preprocess functions into 'includes' folder
+// require_once dirname(__FILE__) . '/includes/page.inc';

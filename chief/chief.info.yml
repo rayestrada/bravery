@@ -12,6 +12,11 @@ libraries-override:
   classy/base: false
   system/base: false
   core/normalize: false
+  core/html5shiv: false
+
+# Defines libraries group in which we can add css/js.
+libraries:
+  - chief/global-styling
 
 # Regions
 regions:
@@ -23,3 +28,7 @@ regions:
   sidebar_second: 'Second sidebar'
   footer: Footer
   bottom: 'Page bottom'
+
+# define custom css for wysiwyg
+#ckeditor_stylesheets:
+#  - dist/css/wysiwyg.css

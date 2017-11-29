@@ -1,6 +1,6 @@
-name: Chief
+name: chief
 type: theme
-description: Custom Chief theme based on Classy
+description: Custom chief theme based on Classy
 core: 8.x
 version: '8.x-1.0'
 

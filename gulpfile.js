@@ -21,6 +21,9 @@ const prefix = require('gulp-autoprefixer');
 // Image Processing
 const imagemin = require('gulp-imagemin');
 
+// Linting
+var sasslint = require('gulp-sass-lint');
+
 /**
  * CONFIGURATION
  */
@@ -69,6 +72,23 @@ gulp.task('images', () => gulp.src(config.src.images)
     .pipe(imagemin())
     .pipe(gulp.dest(config.dest + '/images'))
 );
+
+// Linting task
+gulp.task('lint:sass', () => gulp.src(config.src.sass)
+    .pipe(sasslint({
+      files: {
+        ignore: [
+          'sass/style.scss',
+          'sass/_print.scss',
+          'sass/_variables/__reset.scss']
+      },
+      configFile: '.sass-lint.yml',
+    }))
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError())
+);
+
+gulp.task('lint', gulp.parallel(['lint:sass']));
 
 // Watch task runner
 gulp.task('watch', (done) => {

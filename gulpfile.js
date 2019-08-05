@@ -3,7 +3,7 @@
 /**
  * MODULES
  */
-// Utilities
+  // Utilities
 const gulp = require('gulp');
 const del = require('del');
 const gulpif = require('gulp-if');
@@ -22,7 +22,8 @@ const prefix = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 
 // Linting
-var sasslint = require('gulp-sass-lint');
+const sasslint = require('gulp-sass-lint');
+const eslint = require('gulp-eslint');
 
 /**
  * CONFIGURATION
@@ -52,43 +53,50 @@ gulp.task('clean', () => del([config.dest]));
 
 // Sass compiler task
 gulp.task('sass', () => gulp.src(config.src.sass)
-    .pipe(sourcemaps.init())
-    .pipe(sass(config.sass_libraries).on('error', sass.logError)) // Converts Sass to CSS with gulp-sass
-    .pipe(prefix(config.browserList))
-    .pipe(sourcemaps.write())
-    .pipe(gulpif(config.production, csso()))
-    .pipe(gulp.dest(config.dest + '/css'))
+  .pipe(sourcemaps.init())
+  .pipe(sass(config.sass_libraries).on('error', sass.logError)) // Converts Sass to CSS with gulp-sass
+  .pipe(prefix(config.browserList))
+  .pipe(sourcemaps.write())
+  .pipe(gulpif(config.production, csso()))
+  .pipe(gulp.dest(config.dest + '/css'))
 );
 
 // Javascript transpiling and concatenation task
 gulp.task('js', () => gulp.src(config.src.js)
-    .pipe(babel({ presets: ["@babel/preset-env"] }))
-    .pipe(gulpif(config.production, uglify()))
-    .pipe(gulp.dest(config.dest + '/js'))
+  .pipe(babel({presets: ["@babel/preset-env"]}))
+  .pipe(gulpif(config.production, uglify()))
+  .pipe(gulp.dest(config.dest + '/js'))
 );
 
 // Image minification task
 gulp.task('images', () => gulp.src(config.src.images)
-    .pipe(imagemin())
-    .pipe(gulp.dest(config.dest + '/images'))
+  .pipe(imagemin())
+  .pipe(gulp.dest(config.dest + '/images'))
 );
 
 // Linting task
 gulp.task('lint:sass', () => gulp.src(config.src.sass)
-    .pipe(sasslint({
-      files: {
-        ignore: [
-          'sass/style.scss',
-          'sass/_print.scss',
-          'sass/_variables/__reset.scss']
-      },
-      configFile: '.sass-lint.yml',
-    }))
-    .pipe(sasslint.format())
-    .pipe(sasslint.failOnError())
+  .pipe(sasslint({
+    files: {
+      ignore: [
+        'sass/style.scss',
+        'sass/_print.scss',
+        'sass/_variables/__reset.scss'
+      ]
+    },
+    configFile: '.sass-lint.yml',
+  }))
+  .pipe(sasslint.format())
+  .pipe(sasslint.failOnError())
 );
 
-gulp.task('lint', gulp.parallel(['lint:sass']));
+gulp.task('lint:js', () => gulp.src(config.src.js)
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe(eslint.failAfterError())
+);
+
+gulp.task('lint', gulp.parallel(['lint:sass', 'lint:js']));
 
 // Watch task runner
 gulp.task('watch', (done) => {

@@ -32,7 +32,7 @@ npm run gulp --production
 ```
 
 ## Linting
-Lint the sass files to check for standards compliance.
+Lint the sass and js files to check for standards compliance.
 ```
 npm run gulp lint
 ```

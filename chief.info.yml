@@ -31,4 +31,4 @@ regions:
 
 # define custom css for wysiwyg
 #ckeditor_stylesheets:
-#  - dist/css/wysiwyg.css
+#  - build/css/wysiwyg.css

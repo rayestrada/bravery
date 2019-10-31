@@ -51,7 +51,7 @@
   margin: auto;
   @include breakpoint($desktop) {
     width: calc(100% - 10rem);
-    max-width: $screen-max;
+    max-width: 1440px;
   }
 }
 

@@ -3,18 +3,12 @@
  * Variables.
  */
 
-// Screen width variables.
-$screen-mobile: 500px;
-$screen-tablet: 760px;
-$screen-desktop: 1024px;
-$screen-max: 1440px;
-
 // Breakpoints.
-$mobile: max-width $screen-mobile;
-$tablet: min-width $screen-tablet;
-$all-devices: max-width $screen-desktop - 1;
-$desktop: min-width $screen-desktop;
-$lg-desktop: min-width $screen-max;
+$mobile: max-width 500px;
+$tablet: min-width 760px;
+$all-devices: max-width 1023px;
+$desktop: min-width 1024px;
+$lg-desktop: min-width 1440px;
 
 // Colors.
 $black: #000;

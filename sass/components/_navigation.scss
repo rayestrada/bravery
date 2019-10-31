@@ -1,0 +1,10 @@
+/**
+* @file
+* Navigation styles.
+*/
+
+nav {
+  ul.menu {
+    @include list-reset(flex);
+  }
+}

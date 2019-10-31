@@ -1,0 +1,135 @@
+/**
+ * @file
+ * Print Styles.
+ *
+ * By importing this CSS file as media "all", we allow this print file to be
+ * aggregated with other stylesheets, for improved front-end performance.
+ */
+
+// Set to true to print link URL values.
+$printlinks: true;
+
+// Set domain for relative links
+// Example: https://www.yourdomain.com
+$domain: '';
+
+@media print {
+  // Change base font size to optimize for print.
+  html {
+    font-size: 6pt;
+  }
+
+  a {
+    // Underline all links.
+    &:link,
+    &:visited {
+      text-decoration: underline !important;
+
+      // Don't underline site link, buttons or logo.
+      &.site-link,
+      &.button-link,
+      &#logo {
+        text-decoration: none !important;
+      }
+    }
+
+    // Check if printlinks is true.
+    // Alter links within the main content region.
+    @if $printlinks {
+
+      #main & {
+        // Add visible URL after links.
+        &[href]:after {
+          content: " (" attr(href) ")" !important;
+          font-weight: normal;
+          font-size: 1rem;
+        }
+
+        // Add visible URL and prepend domain after relative links
+        &[href^="/"]:not([href^="//"]):after {
+          content: " (#{$domain}" attr(href) ")" !important;
+        }
+
+        // Only display useful links.
+        &[href=""]:after,
+        &[href^="file:"]:after,
+        &[href^="javascript:"]:after,
+        &[href^="#"]:after {
+          content: "" !important;
+        }
+      }
+
+    }
+  }
+
+  // Add visible title after abbreviations.
+  abbr[title]:after {
+    #content & {
+      content: " (" attr(title) ")";
+    }
+  }
+
+  // Turn off any background colors or images.
+  body,
+  #page,
+  #main,
+  #content {
+    background-color: transparent !important;
+    background-image: none !important;
+    color: $black;
+  }
+
+  // Un-float the content.
+  #content {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  // Hide sidebars and nav elements.
+  #skip-link,
+  #navigation,
+  #footer,
+  .sidebars,
+  .breadcrumb,
+  .pager,
+  .feed-icons,
+  .f-menu {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  // Alter the space around a printed page.
+  @page {
+    margin: 80pt;
+
+    // Avoid a paragraph being detached from the heading immediately preceding it.
+    h2,
+    h3,
+    h4 {
+      page-break-after: avoid;
+      break-after: avoid-page;
+    }
+
+    // Prevent ending up with a single line at the end of a page and a single line at the top the next page.
+    li,
+    p {
+      orphans: 2;
+      widows: 2;
+    }
+
+    // Prevent captions from being separated from images.
+    figure {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+  }
+
+  // Make any transparent element opaque.
+  .js-transparent {
+    opacity: 1 !important;
+  }
+}

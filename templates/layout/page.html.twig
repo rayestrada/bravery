@@ -28,71 +28,36 @@
  *
  * Regions:
  * - page.header: Items for the header region.
- * - page.highlighted: Items for the highlighted region.
- * - page.primary_menu: Items for the primary menu region.
- * - page.secondary_menu: Items for the secondary menu region.
- * - page.highlighted: Items for the highlighted content region.
- * - page.help: Dynamic help text, mostly for admin pages.
  * - page.content: The main content of the current page.
- * - page.sidebar_first: Items for the first sidebar.
- * - page.sidebar_second: Items for the second sidebar.
+ * - page.sidebar: Items for the sidebar.
  * - page.footer: Items for the footer region.
- * - page.breadcrumb: Items for the breadcrumb region.
  *
  * @see template_preprocess_page()
  * @see html.html.twig
  */
 #}
-{% if page.sidebar_first and page.sidebar_second %}
-    {% set sidebar_class = 'two-sidebars' %}
-{% elseif page.sidebar_first %}
-    {% set sidebar_class = 'sidebar-first' %}
-{% elseif page.sidebar_second %}
-    {% set sidebar_class = 'sidebar-second' %}
-{% endif %}
+{% set sidebar_class = page.sidebar ? 'one-sidebar' : '' %}
 
 <div id="page"{{ attributes.addClass(sidebar_class) }}>
 
-    <header role="banner" id="header" class="clearfix">
-        <div class="inner-wrapper">
-            {{ page.header }}
-        </div>
+    <header id="header" role="banner">
+      {{ page.header }}
     </header>
 
-    <div id="navigation" role="navigation">
-        <div class="inner-wrapper">
-            {{ page.navigation }}
-        </div>
-    </div>
+    <main id="main" role="main">
+      <div id="content">
+        {{ page.content }}
+      </div>
 
-    <main role="main" id="main" class="clearfix">
-        <div class="inner-wrapper">
-            <div id="content" tabindex="-1">
-                {{ page.highlighted }}
-                {{ page.content }}
-            </div>
-
-            {% if page.sidebar_first or page.sidebar_second %}
-                <aside class="sidebars" role="complementary">
-                    <section class="sidebar-first">{{ page.sidebar_first }}</section>
-                    <section class="sidebar-second">{{ page.sidebar_second }}</section>
-                </aside>
-            {% endif %}
-
-            {% if page.sidebar_second %}
-
-            {% endif %}
-        </div>
+      {% if page.sidebar %}
+        <aside id="sidebar" role="complementary">
+          {{ page.sidebar }}
+        </aside>
+      {% endif %}
     </main>
 
-    {% if page.footer %}
-        <footer role="contentinfo" id="footer">
-            <div class="inner-wrapper">
-                {{ page.footer }}
-            </div>
-        </footer>
-    {% endif %}
+  <footer id="footer" role="contentinfo">
+    {{ page.footer }}
+  </footer>
 
 </div>{# /.page #}
-
-{{ page.bottom }}

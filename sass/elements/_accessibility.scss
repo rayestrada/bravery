@@ -1,0 +1,60 @@
+/**
+ * @file
+ * Classes for controlling display for accessibility.
+ */
+
+// Makes an element visually hidden, but accessible.
+// @see https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+.element-invisible,
+.visually-hidden {
+  @include element-invisible;
+}
+
+// Turns off the element-invisible effect.
+.element-invisible-off {
+  @include element-invisible-off;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+.element-focusable {
+  @include element-focusable();
+}
+
+// Skip links will be completely hidden until the link has focus.
+.skip-link {
+  display: block;
+  background: #2d2d2d;
+  color: #fff;
+  text-align: center;
+  height: 0;
+  &:focus {
+    height: auto;
+    padding: 10px;
+  }
+}
+
+// Screen reader style.
+.screen-reader-text {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  &:focus {
+    top: 5px;
+    left: 5px;
+    z-index: 100000;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 15px 23px 14px;
+    clip: auto !important;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    color: #21759b;
+    line-height: normal;
+    text-decoration: none;
+  }
+}
+

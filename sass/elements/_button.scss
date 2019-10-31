@@ -1,0 +1,41 @@
+/**
+* @file
+* button and button link element styles.
+*/
+
+button,
+%button {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1.25rem 2.25rem;
+  border: 0;
+  border-radius: 0;
+  background-color: $black;
+  color: $white;
+  font-family: $sans;
+  line-height: 1;
+  appearance: none;
+  cursor: pointer;
+  &[type="reset"] {
+    background-color: $black;
+  }
+  &[disabled] {
+    background-color: $black;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  @include hover {
+    background-color: lighten($black, 10);
+  }
+  &.style--reset {
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+  }
+}
+
+a.button-link {
+  @extend %button;
+}

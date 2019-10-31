@@ -1,0 +1,29 @@
+/**
+* @file
+* Table styles.
+*/
+
+table {
+  width: 100%;
+  tr {
+    &:nth-child(even) {
+      background-color: lighten($black, 80);
+    }
+  }
+  td,
+  th {
+    padding: 1.5rem 2rem;
+    text-align: left;
+    @include trim();
+  }
+  thead th,
+  tbody th,
+  tfoot th {
+    background-color: $black;
+    color: $white;
+    font-weight: bold;
+  }
+  th.js-empty-header-cell {
+    visibility: hidden;
+  }
+}

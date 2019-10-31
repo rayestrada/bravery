@@ -21,13 +21,9 @@ libraries:
 # Regions
 regions:
   header: Header
-  navigation: 'Navigation Bar'
-  highlighted: Highlighted
   content: Content
-  sidebar_first: 'First sidebar'
-  sidebar_second: 'Second sidebar'
+  sidebar: Sidebar
   footer: Footer
-  bottom: 'Page bottom'
 
 # define custom css for wysiwyg
 #ckeditor_stylesheets:

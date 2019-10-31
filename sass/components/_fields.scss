@@ -1,0 +1,32 @@
+/**
+ * @file
+ * Global field styles.
+ */
+
+// Global field styles.
+.field-item,
+.block-content {
+  > * {
+    @include trim();
+  }
+}
+.field {
+  .field-label {
+    @extend label;
+    margin-bottom: 0;
+  }
+}
+
+// Inline styles.
+.inline {
+  display: inline;
+  padding: 0;
+  li {
+    display: inline;
+    padding: 0 1em 0 0; /* LTR */
+    list-style-type: none;
+  }
+}
+span.field-label {
+  padding: 0 1em 0 0; /* LTR */
+}

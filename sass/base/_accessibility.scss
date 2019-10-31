@@ -1,0 +1,51 @@
+/**
+ * @file
+ * Mixins for controlling display for accessibility..
+ */
+
+// Makes an element visually hidden, but accessible.
+// @see https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+  @include element-invisible;
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+// Clear a container that has nested floated elements.
+@mixin clearfix {
+  &:after {
+    clear: both;
+    display: table;
+    content: "";
+  }
+}
+
+// Define a mixin for declaring hover and focus state together.
+@mixin hover {
+  &:hover,
+  &:focus,
+  &.js-focus {
+    @content;
+  }
+}

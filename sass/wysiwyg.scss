@@ -1,0 +1,17 @@
+/**
+ * @file
+ * Import site styles and create overrides for the wysiwyg.
+ */
+
+@import url(styles.css);
+
+body {
+  padding: 20px;
+  > *:first-child {
+    margin-top: 0;
+  }
+}
+
+drupal-entity[data-embed-button="video"] {
+  display: block;
+}

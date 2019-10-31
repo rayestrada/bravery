@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Variables.
+ */
+
+// Screen width variables.
+$screen-mobile: 500px;
+$screen-tablet: 760px;
+$screen-desktop: 1024px;
+$screen-max: 1440px;
+
+// Breakpoints.
+$mobile: max-width $screen-mobile;
+$tablet: min-width $screen-tablet;
+$all-devices: max-width $screen-desktop - 1;
+$desktop: min-width $screen-desktop;
+$lg-desktop: min-width $screen-max;
+
+// Colors.
+$black: #000;
+$owhite: #f7f7f7;
+$white: #fff;
+
+// Font-face.
+
+// Font-families.
+$serif: Georgia, "Times New Roman", serif;
+$sans: Arial, sans-serif;
+$mono: "Courier New", monospace, sans-serif;

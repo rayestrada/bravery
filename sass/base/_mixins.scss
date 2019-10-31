@@ -1,0 +1,84 @@
+/**
+ * @file
+ * Custom Mixins.
+ *
+ */
+
+// Use crisp font aliasing
+@mixin crisp() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Auto scroll with smooth scrolling on touch devices.
+@mixin scroll {
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Rawlison font.
+@mixin serif {
+  font-family: $serif;
+  font-weight: normal;
+}
+
+// Reset a list style.
+// $type: flex or inline-block.
+@mixin list-reset($type: none) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @if $type == flex {
+    display: flex;
+  }
+  li {
+    @if $type == inline {
+      display: inline;
+    }
+    list-style-type: none;
+    list-style-image: none;
+  }
+}
+
+// Define a global box-shadow style.
+@mixin box-shadow {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Trims the margin for top/bottom or left/right.
+@mixin trim() {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// A global setting that can be used for controlling container widths.
+@mixin container {
+  position: relative;
+  width: calc(100% - 6rem);
+  margin: auto;
+  @include breakpoint($desktop) {
+    width: calc(100% - 10rem);
+    max-width: $screen-max;
+  }
+}
+
+// Positions the element to 100% the width and height of the relative container.
+@mixin fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin invert {
+  background-color: $black;
+  color: $white;
+  a {
+    color: $white;
+  }
+}

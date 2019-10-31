@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Main, Content and Sidebar region styling.
+ */
+
+#main {
+  .one-sidebar & {
+    @include breakpoint($desktop) {
+      display: flex;
+      > #content {
+        width: 75%;
+      }
+      > #sidebar {
+        width: 25%;
+      }
+    }
+  }
+}
+
+#content {
+
+}
+
+#sidebar {
+
+}

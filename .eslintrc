@@ -6,6 +6,10 @@
     "import/first": 0,
     "no-console": 0,
   },
+  "globals": {
+    "jQuery": "readonly",
+    "document": "writable",
+  },
   "overrides": [
   ]
 }

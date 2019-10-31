@@ -1,0 +1,136 @@
+/**
+* @file
+* Form element styles.
+*/
+
+// Fully prefixed placeholder styling.
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// Global form styles
+form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  > * {
+    @include trim();
+  }
+}
+.form-item,
+.form-actions {
+  margin: 20px 0;
+}
+
+// Global label styles.
+label {
+  margin-bottom: 5px;
+  font-family: $sans;
+}
+
+// Global input styles.
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
+textarea {
+  padding: 1.25rem 1.5rem;
+  border: $border;
+  box-sizing: border-box;
+  font-family: $sans;
+  background-color: $white;
+  @include placeholder {
+    color: lighten($black, 55);
+  }
+}
+input[type="checkbox"],
+input[type="radio"] {
+  @include element-invisible;
+  + label {
+    position: relative;
+    display: inline;
+    box-sizing: border-box;
+    font-weight: normal;
+    cursor: pointer;
+    &:before {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-bottom: -2px;
+      margin-right: 8px;
+      overflow: hidden;
+      border: $border;
+      content: '';
+    }
+  }
+  &:checked + label {
+    &:before {
+      background-color: $black;
+    }
+  }
+}
+input[type="radio"] + label:before {
+  border-radius: 50%;
+}
+
+// Global select box styles.
+.selectlist {
+  position: relative;
+  display: inline-block;
+  border: $border;
+  background-clip: padding-box;
+  background-color: $white;
+}
+select {
+  position: relative;
+  z-index: 2;
+  display: block;
+  box-sizing: border-box;
+  padding: 1.25rem 1.5rem;
+  -moz-padding-end: 10px;
+  border: $border;
+  border-radius: 0;
+  background-color: $white;
+  font-family: $sans;
+  line-height: 1;
+  appearance: none;
+  cursor: pointer;
+  .selectlist & {
+    float: left;
+    margin: 0;
+    border: none;
+    background: transparent;
+    background-color: transparent;
+    line-height: 14px;
+  }
+}
+
+// Global button styles.
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  @extend %button;
+}
+
+fieldset {
+  border: $border;
+  padding: 2rem;
+}

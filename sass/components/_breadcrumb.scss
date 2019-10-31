@@ -1,0 +1,11 @@
+/**
+* @file
+* Breadcrumb styles.
+*/
+
+.breadcrumb {
+  ul,
+  ol {
+    @include list-reset(inline);
+  }
+}

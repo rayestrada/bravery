@@ -37,7 +37,6 @@ p {
   // Define an intro paragraph style.
   &.intro {
     @extend %large;
-    @include serif();
   }
 }
 
@@ -54,7 +53,6 @@ hr {
 
 // Define a blockquote style.
 blockquote {
-  @include serif();
   font-size: 3.3rem;
   line-height: 1.27;
   p {

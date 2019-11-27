@@ -6,6 +6,9 @@
 .breadcrumb {
   ul,
   ol {
-    @include list-reset(inline);
+    @include list-reset();
+    li {
+      display: inline-flex;
+    }
   }
 }

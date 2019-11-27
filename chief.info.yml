@@ -27,4 +27,4 @@ regions:
 
 # define custom css for wysiwyg
 #ckeditor_stylesheets:
-#  - build/css/wysiwyg.css
+  - build/css/wysiwyg.css

@@ -18,17 +18,11 @@
 
 // Reset a list style.
 // $type: flex or inline.
-@mixin list-reset($type: none) {
+@mixin list-reset() {
   list-style: none;
   margin: 0;
   padding: 0;
-  @if $type == flex {
-    display: flex;
-  }
   li {
-    @if $type == inline {
-      display: inline;
-    }
     list-style-type: none;
     list-style-image: none;
   }

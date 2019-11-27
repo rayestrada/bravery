@@ -5,6 +5,8 @@
 
 table {
   width: 100%;
+  display: block;
+  overflow: auto;
   tr {
     &:nth-child(even) {
       background-color: lighten($black, 80);
@@ -23,7 +25,7 @@ table {
     color: $white;
     font-weight: bold;
   }
-  th.js-empty-header-cell {
+  th:empty {
     visibility: hidden;
   }
 }

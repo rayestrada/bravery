@@ -33,8 +33,7 @@ const config = {
   browserList: ['last 2 version', '> 1%', 'ie 11'],
   sass_libraries: {
     includePaths: [
-      'node_modules/breakpoint-sass/stylesheets/',
-      'node_modules/standardize-sass/stylesheet'
+      'node_modules/breakpoint-sass/stylesheets/'
     ]
   },
   src: {
@@ -81,7 +80,7 @@ gulp.task('lint:sass', () => gulp.src(config.src.sass)
       ignore: [
         'sass/style.scss',
         'sass/_print.scss',
-        'sass/_variables/__reset.scss'
+        'sass/base/_standardize.scss'
       ]
     },
     configFile: '.sass-lint.yml',

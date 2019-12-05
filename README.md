@@ -1,4 +1,4 @@
-# Chief Drupal 8 Theme
+# Bravery Drupal 8 Theme
 
 ## Global Requirements
 Node ^8 (prefer Node 10)
@@ -6,7 +6,7 @@ Node ^8 (prefer Node 10)
 ## Installation
 
 ### 1. Update the theme file names
-Update naming of files and setttings replacing `chief` with `your_theme_name`
+Update naming of files and setttings replacing `bravery` with `your_theme_name`
 
 ### 2. Install theme dependencies
 The gulp file should be all setup for you. All you should have to do is install the dependencies from package.json locally and remove git tracking on the theme.

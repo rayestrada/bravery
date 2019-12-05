@@ -5,8 +5,10 @@
 
 #logo {
   display: block;
+
   svg {
     max-width: 18rem;
+
     > path {
       fill: $black;
     }

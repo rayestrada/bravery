@@ -1,22 +1,22 @@
-chief.mobile:
+bravery.mobile:
   label: Mobile
   mediaQuery: 'all and (max-width: 759px)'
   weight: 0
   multipliers:
     - 1x
-chief.tablet:
+bravery.tablet:
   label: Tablet
   mediaQuery: 'all and (min-width: 760px) and (max-width: 1023px)'
   weight: 2
   multipliers:
     - 1x
-chief.desktop:
+bravery.desktop:
   label: Desktop
   mediaQuery: 'all and (min-width: 1024px)'
   weight: 5
   multipliers:
     - 1x
-chief.lg_desktop:
+bravery.lg_desktop:
   label: Large Desktop
   mediaQuery: 'all and (min-width: 1440px)'
   weight: 5

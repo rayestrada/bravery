@@ -1,6 +1,6 @@
-name: chief
+name: bravery
 type: theme
-description: Custom chief theme based on Classy
+description: Custom bravery theme based on Classy
 core: 8.x
 version: '8.x-1.0'
 
@@ -16,7 +16,7 @@ libraries-override:
 
 # Defines libraries group in which we can add css/js.
 libraries:
-  - chief/global-styling
+  - bravery/global-styling
 
 # Regions
 regions:

@@ -3,33 +3,19 @@
 * Form element styles.
 */
 
-// Fully prefixed placeholder styling.
-@mixin placeholder {
-  &::-webkit-input-placeholder {
-    @content;
-  }
-  &:-moz-placeholder {
-    @content;
-  }
-  &::-moz-placeholder {
-    @content;
-  }
-  &:-ms-input-placeholder {
-    @content;
+// Global form styles
+form {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  > * {
+    @extend %trim;
   }
 }
 
-// Global form styles
-form {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  > * {
-    @include trim();
-  }
-}
 .form-item,
 .form-actions {
-  margin: 20px 0;
+  margin: 2rem 0;
 }
 
 // Global label styles.
@@ -61,15 +47,18 @@ textarea {
     color: lighten($black, 55);
   }
 }
+
 input[type="checkbox"],
 input[type="radio"] {
-  @include element-invisible;
+  @extend %element-invisible;
+
   + label {
     position: relative;
     display: inline;
     box-sizing: border-box;
     font-weight: normal;
     cursor: pointer;
+
     &:before {
       display: inline-block;
       width: 14px;
@@ -81,12 +70,14 @@ input[type="radio"] {
       content: '';
     }
   }
+
   &:checked + label {
     &:before {
       background-color: $black;
     }
   }
 }
+
 input[type="radio"] + label:before {
   border-radius: 50%;
 }
@@ -99,6 +90,7 @@ input[type="radio"] + label:before {
   background-clip: padding-box;
   background-color: $white;
 }
+
 select {
   position: relative;
   z-index: 2;
@@ -113,10 +105,11 @@ select {
   line-height: 1;
   appearance: none;
   cursor: pointer;
+
   .selectlist & {
     float: left;
     margin: 0;
-    border: none;
+    border: 0;
     background: transparent;
     background-color: transparent;
     line-height: 14px;

@@ -14,6 +14,10 @@
   white-space: nowrap;
 }
 
+%element-invisible {
+  @include element-invisible();
+}
+
 // Turns off the element-invisible effect.
 @mixin element-invisible-off {
   position: static !important;
@@ -23,13 +27,22 @@
   overflow: auto;
 }
 
+%element-invisible-off {
+  @include element-invisible-off();
+}
+
 // Makes an element visually hidden by default, but visible when focused.
 @mixin element-focusable {
-  @include element-invisible;
+  @include element-invisible();
+
   &:active,
   &:focus {
-    @include element-invisible-off;
+    @include element-invisible-off();
   }
+}
+
+%element-focusable {
+  @include element-focusable();
 }
 
 // Clear a container that has nested floated elements.
@@ -39,6 +52,10 @@
     display: table;
     content: "";
   }
+}
+
+%clearfix {
+  @include clearfix();
 }
 
 // Define a mixin for declaring hover and focus state together.

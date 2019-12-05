@@ -3,10 +3,11 @@
  * Import site styles and create overrides for the wysiwyg.
  */
 
-@import url(styles.css);
+@import url("styles.css");
 
 body {
   padding: 20px;
+
   > *:first-child {
     margin-top: 0;
   }

@@ -18,17 +18,21 @@ button,
   line-height: 1;
   appearance: none;
   cursor: pointer;
+
   &[type="reset"] {
     background-color: $black;
   }
+
   &[disabled] {
     background-color: $black;
     opacity: 0.3;
     pointer-events: none;
   }
+
   @include hover {
     background-color: lighten($black, 10);
   }
+
   &.style--reset {
     padding: 0;
     background-color: transparent;

@@ -5,11 +5,14 @@
 
 #main {
   .one-sidebar & {
+
     @include breakpoint($desktop) {
       display: flex;
+
       > #content {
         width: 75%;
       }
+
       > #sidebar {
         width: 25%;
       }
@@ -18,9 +21,9 @@
 }
 
 #content {
-
+  position: relative;
 }
 
 #sidebar {
-
+  position: relative;
 }

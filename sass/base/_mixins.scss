@@ -10,10 +10,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+%crisp {
+  @include crisp();
+}
+
 // Auto scroll with smooth scrolling on touch devices.
 @mixin scroll {
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+}
+
+%scroll {
+  @include scroll();
 }
 
 // Reset a list style.
@@ -22,20 +30,31 @@
   list-style: none;
   margin: 0;
   padding: 0;
+
   li {
     list-style-type: none;
     list-style-image: none;
   }
 }
 
+%list-reset {
+  @include list-reset();
+}
+
 // Trims the margin for top/bottom.
 @mixin trim() {
+
   &:first-child {
     margin-top: 0;
   }
+
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+%trim {
+  @include trim();
 }
 
 // A global setting that can be used for controlling container widths.
@@ -43,10 +62,15 @@
   position: relative;
   width: calc(100% - 6rem);
   margin: auto;
+
   @include breakpoint($desktop) {
     width: calc(100% - 10rem);
     max-width: 1440px;
   }
+}
+
+%container {
+  @include container();
 }
 
 // Positions the element to 100% the width and height of the relative container.
@@ -56,4 +80,28 @@
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+%fill {
+  @include fill();
+}
+
+// Fully prefixed placeholder styling.
+@mixin placeholder {
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
 }

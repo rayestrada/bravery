@@ -7,17 +7,20 @@ table {
   width: 100%;
   display: block;
   overflow: auto;
+
   tr {
     &:nth-child(even) {
       background-color: lighten($black, 80);
     }
   }
+
   td,
   th {
     padding: 1.5rem 2rem;
     text-align: left;
     @include trim();
   }
+
   thead th,
   tbody th,
   tfoot th {
@@ -25,6 +28,7 @@ table {
     color: $white;
     font-weight: bold;
   }
+
   th:empty {
     visibility: hidden;
   }

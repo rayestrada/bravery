@@ -5,7 +5,7 @@
 
 nav {
   ul.menu {
-    @include list-reset();
+    @extend %list-reset;
     display: flex;
   }
 }

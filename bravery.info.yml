@@ -26,5 +26,5 @@ regions:
   footer: Footer
 
 # define custom css for wysiwyg
-#ckeditor_stylesheets:
+ckeditor_stylesheets:
   - build/css/wysiwyg.css

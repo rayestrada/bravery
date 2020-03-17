@@ -6,8 +6,8 @@ global-styling:
 #  js:
 #    build/js/script.js: {}
   dependencies:
-#    - insidenps/webfont
-    - insidenps/admin-tabs
+#    - bravery/webfont
+    - bravery/admin-tabs
 
 admin-tabs:
   version: 1.0

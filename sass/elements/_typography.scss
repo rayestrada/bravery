@@ -9,28 +9,19 @@ body {
   line-height: 1.75;
   color: $black;
   font-family: $sans;
-
-  @include breakpoint($all-devices) {
-    &.noscroll {
-      position: fixed;
-      overflow: hidden;
-      height: 100%;
-      width: 100%;
-    }
-  }
 }
 
 .large,
 %large {
   font-size: 2.2rem;
-  line-height: 1.36;
+  line-height: 1.4;
 }
 
 small,
 .small,
 %small {
-  font-size: 1.4rem;
-  line-height: 1.43;
+  font-size: 1.3rem;
+  line-height: 1.5;
 }
 
 p {
@@ -66,7 +57,6 @@ q,
 cite {
   font-size: 1.5rem;
   line-height: 1.6;
-  font-family: $sans;
   font-style: normal;
   display: block;
 }

@@ -102,7 +102,6 @@ dfn {
 
 /* Address differences between Firefox and other browsers. */
 hr {
-  box-sizing: content-box;
   height: 0;
   border-bottom: 1px solid;
   margin: 1em 0;
@@ -343,7 +342,6 @@ input[type="radio"] {
  */
 input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
-  box-sizing: content-box;
 }
 
 /**

@@ -5,9 +5,24 @@
 
 .field__label {
   @extend label;
+
+  .field--label-inline & {
+    margin-right: 1rem;
+
+    &:after {
+      content: ':';
+    }
+  }
 }
 
 // Inline styles.
 .field--label-inline {
   display: flex;
+}
+
+.field--type-text-with-summary,
+.field--type-text-long {
+  > .field__items > .field__item > * {
+    @extend %trim;
+  }
 }

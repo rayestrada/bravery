@@ -5,7 +5,7 @@
 
 %pager__item {
   display: inline;
-  padding: 0 0.5em;
+  padding: 0 0.5rem;
   list-style-type: none;
   background-image: none;
 }
@@ -16,16 +16,15 @@
   text-align: center;
 }
 
-.pager-item, // A list item containing a page number in the list of pages.
-.pager-first, // The first page's list item.
-.pager-previous, // The previous page's list item.
-.pager-next, // The next page's list item.
-.pager-last, // The last page's list item.
-.pager-ellipsis { // A concatenation of several list items using an ellipsis.
+.pager__item, // A list item containing a page number in the list of pages.
+.pager__item--first, // The first page's list item.
+.pager__item--previous, // The previous page's list item.
+.pager__item--next, // The next page's list item.
+.pager__item--last, // The last page's list item.
+.pager__item--ellipsis { // A concatenation of several list items using an ellipsis.
   @extend %pager__item;
-}
 
-.pager-current {
-  @extend %pager__item;
-  font-weight: bold;
+  &.is-active {
+    font-weight: bold;
+  }
 }

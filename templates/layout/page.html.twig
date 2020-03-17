@@ -36,9 +36,13 @@
  * @see html.html.twig
  */
 #}
-{% set sidebar_class = page.sidebar ? 'one-sidebar' : '' %}
+{%
+  set classes = [
+    page.sidebar ? 'one-sidebar',
+  ]
+%}
 
-<div id="page"{{ attributes.addClass(sidebar_class) }}>
+<div id="page"{{ attributes.addClass(classes) }}>
 
     <header id="header" role="banner">
       {{ page.header }}

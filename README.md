@@ -1,7 +1,7 @@
 # Bravery Drupal 8 Theme
 
 ## Global Requirements
-Node ^8 (prefer Node 10)
+Node 10
 
 ## Installation
 
@@ -9,7 +9,9 @@ Node ^8 (prefer Node 10)
 Update naming of files and setttings replacing `bravery` with `your_theme_name`
 
 ### 2. Install theme dependencies
-The gulp file should be all setup for you. All you should have to do is install the dependencies from package.json locally and remove git tracking on the theme.
+The gulp file should be all setup for you. 
+All you should have to do is install the dependencies from package.json locally 
+and remove git tracking on the theme.
 ```
 npm install
 ```
@@ -23,20 +25,21 @@ rm .gitignore
 ## Compiling
 **Development**: Starts a watch on sass, js and images 
 ```
-npm run gulp
+npm run dev
 ```
 
 **Production**: Compiles and minifies files for final packaging
 ```
-npm run gulp --production
+npm run build
 ```
 
 ## Linting
 Lint the sass and js files to check for standards compliance.
 ```
-npm run gulp lint
+npm run lint
 ```
 
 ## Templates
 
-To override template files, copy core `classy` theme template files into this theme's `templates` sub-directory.
+To override template files, copy core `classy` theme template files 
+into this theme's `templates` sub-directory.

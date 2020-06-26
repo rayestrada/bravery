@@ -1,7 +1,12 @@
 /**
  * @file
- * Common javascript file for loading scripts.
+ * Theme Javascript file for initializing scripts.
  */
+
+// Standard wrapper
+// (() => {
+//   // Place code here.
+// }());
 
 // jQuery wrapper example.
 // ($ => {

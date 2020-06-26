@@ -23,17 +23,18 @@
 @import "elements/form";
 @import "elements/accessibility";
 @import "elements/media";
+@import "elements/branding";
+@import "elements/fields";
 
-// Import all component styles
-@import "components/branding";
-@import "components/fields";
-@import "components/navigation";
-@import "components/breadcrumb";
-@import "components/pager";
+// Import all navigation styles
+@import "navigation/main-menu";
+@import "navigation/breadcrumb";
+@import "navigation/pager";
 
 // Import all structure styles
 @import "structures/page";
 @import "structures/main";
+@import "structures/banner";
 @import "structures/header";
 @import "structures/footer";
 

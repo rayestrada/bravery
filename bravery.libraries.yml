@@ -7,13 +7,13 @@ global-styling:
 #    build/js/script.js: {}
   dependencies:
 #    - bravery/webfont
-    - bravery/admin-tabs
+    - bravery/admin-tasks
 
-admin-tabs:
+admin-tasks:
   version: 1.0
   css:
     theme:
-      build/css/tabs.css: {}
+      build/css/admin-tasks.css: {}
 
 #webfont:
 #  version: 1.0

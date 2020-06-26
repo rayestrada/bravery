@@ -19,7 +19,8 @@ form {
 }
 
 // Global label styles.
-label {
+label,
+%label {
   margin-bottom: 0.5rem;
 }
 
@@ -37,12 +38,21 @@ input[type="week"],
 input[type="datetime"],
 input[type="datetime-local"],
 textarea {
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem;
   border: $border;
   background-color: $white;
+  width: 100%;
+
   @include placeholder {
     color: rgba($black, 0.5);
   }
+}
+
+input[type="search"],
+input[type='text']#edit-search,
+input[type='text'][id^='edit-search--'] {
+  background: url("../../images/svg/search.svg") calc(100% - 1.5rem) 50% no-repeat;
+  padding-right: 3.5rem;
 }
 
 input[type="checkbox"],
@@ -68,15 +78,24 @@ input[type="radio"] {
     }
   }
 
+  @include hover {
+    + label:before,
+    &:checked + label:before {
+      box-shadow: 0 0 2px 1px $black;
+    }
+  }
+
   &:checked + label {
     &:before {
-      background-color: $black;
+      background: $black url("../../images/svg/check.svg") center center no-repeat;
+      background-size: 1.2rem;
     }
   }
 }
 
 input[type="radio"] + label:before {
   border-radius: 50%;
+  background-image: none !important;
 }
 
 // Global select box styles.
@@ -84,11 +103,13 @@ select {
   position: relative;
   z-index: 2;
   display: block;
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem;
   -moz-padding-end: 10px;
   border: $border;
   border-radius: 0;
-  background-color: $white;
+  background: $white url("../../images/svg/select.svg") calc(100% - 1.5rem) 50% no-repeat;
+  background-size: 1rem auto;
+  width: 100%;
   line-height: 1;
   appearance: none;
   cursor: pointer;

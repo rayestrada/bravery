@@ -1,7 +1,8 @@
 /**
  * @file
- * Visual styles for local task tabs.
+ * Visual styles for admin tasks.
  * source: classy/css/components/tabs.css
+ * source: classy/css/components/node.css
  */
 
 ul.tabs {
@@ -12,23 +13,22 @@ ul.tabs {
 
   > li {
     display: inline-block;
-    margin-right: 0.3rem; /* LTR */
-
-    [dir="rtl"] & {
-      margin-right: 0;
-      margin-left: 0.3rem;
-    }
+    margin: 0;
+    padding: 0;
   }
 
   a {
     display: block;
     font-weight: bold;
     line-height: 1;
-    padding: 1.25rem 2rem;
+    padding: 1rem 1.5rem;
     text-decoration: none;
+    background-color: #fff;
+    font-size: 1.4rem;
+    font-family: Arial, sans-serif;
 
     &.is-active {
-      background-color: #eee;
+      background-color: #ccc;
     }
 
     &:focus,
@@ -36,4 +36,9 @@ ul.tabs {
       background-color: #f5f5f5;
     }
   }
+}
+
+// Adding visible styling to unpublished nodes
+.node--unpublished {
+  background-color: #fff4f4;
 }

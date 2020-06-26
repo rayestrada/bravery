@@ -16,10 +16,10 @@ table {
 
   td,
   th {
+    @include trim();
     padding: 1.5rem 2rem;
     text-align: left;
     min-width: 18rem;
-    @include trim();
   }
 
   thead th,
@@ -27,7 +27,7 @@ table {
   tfoot th {
     background-color: $black;
     color: $white;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   th:empty {

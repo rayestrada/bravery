@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Banner region styling.
+ */
+
+#banner {
+  position: relative;
+
+  .region-banner {
+    @extend %container;
+    max-width: 67rem;
+  }
+}

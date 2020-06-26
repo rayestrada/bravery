@@ -11,6 +11,11 @@ body {
   font-family: $sans;
 }
 
+.container {
+  @extend %container;
+  max-width: 67rem;
+}
+
 .large,
 %large {
   font-size: 2.2rem;
@@ -24,11 +29,8 @@ small,
   line-height: 1.5;
 }
 
-p {
-  // Define an intro paragraph style.
-  &.intro {
-    @extend %large;
-  }
+.description {
+  @extend %small;
 }
 
 // Define a link style.
@@ -40,6 +42,7 @@ a {
 hr {
   border: 0;
   border-bottom: $border;
+  margin: 3rem 0;
 }
 
 // Define a blockquote style.
@@ -61,8 +64,23 @@ cite {
   display: block;
 }
 
+mark {
+  background-color: $owhite;
+}
+
 figcaption,
 caption {
   @extend %small;
   margin: 1rem 0;
+}
+
+dl {
+  dd {
+    margin-left: 2rem;
+  }
+}
+
+.text-align-center,
+.rtecenter {
+  text-align: center;
 }

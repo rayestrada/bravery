@@ -26,3 +26,12 @@
     @extend %trim;
   }
 }
+
+%field {
+  @extend %trim;
+  margin: 2.2rem 0;
+
+  > .field__label {
+    margin-bottom: 1rem;
+  }
+}

@@ -5,12 +5,12 @@
 
 %pager__item {
   display: inline;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   list-style-type: none;
   background-image: none;
 }
 
-.pager {
+nav.pager {
   clear: both;
   padding: 0;
   text-align: center;
@@ -27,4 +27,9 @@
   &.is-active {
     font-weight: bold;
   }
+}
+
+.pager__item--first,
+.pager__item--last {
+  display: none;
 }

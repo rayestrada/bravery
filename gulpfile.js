@@ -18,9 +18,6 @@ const csso = require('gulp-csso');
 const sourcemaps = require('gulp-sourcemaps');
 const prefix = require('gulp-autoprefixer');
 
-// Image Processing
-const imagemin = require('gulp-imagemin');
-
 // Linting
 const sasslint = require('gulp-sass-lint');
 const eslint = require('gulp-eslint');
@@ -38,8 +35,7 @@ const config = {
   },
   src: {
     sass: 'sass/**/*.scss',
-    js: 'js/*.js',
-    images: 'images/**/*'
+    js: 'js/*.js'
   },
   dest: 'build'
 };
@@ -65,12 +61,6 @@ gulp.task('js', () => gulp.src(config.src.js)
   .pipe(babel({presets: ["@babel/preset-env"]}))
   .pipe(gulpif(config.production, uglify()))
   .pipe(gulp.dest(config.dest + '/js'))
-);
-
-// Image minification task
-gulp.task('images', () => gulp.src(config.src.images)
-  .pipe(imagemin())
-  .pipe(gulp.dest(config.dest + '/images'))
 );
 
 // Linting task
@@ -102,7 +92,6 @@ gulp.task('watch', (done) => {
   if (!config.production) {
     gulp.watch(config.src.sass, gulp.series('sass'));
     gulp.watch(config.src.js, gulp.series('js'));
-    gulp.watch(config.src.images, gulp.series('images'));
   }
   done();
 });
@@ -113,7 +102,6 @@ gulp.task('watch', (done) => {
 const tasks = [
   'sass',
   'js',
-  'images',
   'watch'
 ];
 

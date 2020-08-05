@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Site Branding styles.
+ */
+
+#logo {
+  display: block;
+  position: relative;
+
+  svg {
+    width: 6rem;
+    height: 6rem;
+
+    @include breakpoint($desktop) {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    > path {
+      fill: $black;
+    }
+  }
+}

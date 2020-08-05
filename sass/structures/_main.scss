@@ -4,17 +4,33 @@
  */
 
 #main {
-  .one-sidebar & {
+  .content__no-sidebar {
+    @extend %container;
+    max-width: 113rem;
+    padding: 6rem 0;
+  }
+
+  .content__one-sidebar {
+    @extend %container;
+    max-width: 113rem;
+    padding: 6rem 0;
 
     @include breakpoint($desktop) {
       display: flex;
+      justify-content: space-between;
 
-      > #content {
-        width: 75%;
+      #content {
+        max-width: 67rem;
       }
 
-      > #sidebar {
-        width: 25%;
+      #sidebar {
+        width: 32rem;
+        margin-left: 6rem;
+        order: 2;
+
+        .region-sidebar > * {
+          position: relative;
+        }
       }
     }
   }
@@ -26,4 +42,13 @@
 
 #sidebar {
   position: relative;
+
+  @include breakpoint($all-devices) {
+    margin-top: 6rem;
+  }
+
+  .block {
+    @extend %trim;
+    margin: 6rem 0;
+  }
 }

@@ -10,15 +10,16 @@ table {
 
   tr {
     &:nth-child(even) {
-      background-color: lighten($black, 80);
+      background-color: rgba($black, 0.5);
     }
   }
 
   td,
   th {
+    @include trim();
     padding: 1.5rem 2rem;
     text-align: left;
-    @include trim();
+    min-width: 18rem;
   }
 
   thead th,
@@ -26,7 +27,7 @@ table {
   tfoot th {
     background-color: $black;
     color: $white;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   th:empty {

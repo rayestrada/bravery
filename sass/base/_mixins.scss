@@ -1,32 +1,23 @@
 /**
  * @file
- * Custom Mixins.
+ * Custom Mixins and placeholders.
  *
  */
 
 // Use crisp font aliasing
-@mixin crisp() {
+%crisp {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-%crisp {
-  @include crisp();
-}
-
 // Auto scroll with smooth scrolling on touch devices.
-@mixin scroll {
+%scroll {
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
-%scroll {
-  @include scroll();
-}
-
 // Reset a list style.
-// $type: flex or inline.
-@mixin list-reset() {
+%list-reset {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -37,13 +28,8 @@
   }
 }
 
-%list-reset {
-  @include list-reset();
-}
-
 // Trims the margin for top/bottom.
-@mixin trim() {
-
+%trim {
   &:first-child {
     margin-top: 0;
   }
@@ -53,19 +39,19 @@
   }
 }
 
-%trim {
-  @include trim();
-}
-
 // A global setting that can be used for controlling container widths.
-@mixin container {
+@mixin container() {
   position: relative;
-  width: calc(100% - 6rem);
+  width: calc(100% - 4rem);
   margin: auto;
 
   @include breakpoint($desktop) {
-    width: calc(100% - 10rem);
-    max-width: 1440px;
+    width: calc(100% - 6rem);
+  }
+
+  @include breakpoint($desktop) {
+    width: calc(100% - 8rem);
+    max-width: 136rem;
   }
 }
 
@@ -74,16 +60,12 @@
 }
 
 // Positions the element to 100% the width and height of the relative container.
-@mixin fill {
+%fill {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-}
-
-%fill {
-  @include fill();
 }
 
 // Fully prefixed placeholder styling.

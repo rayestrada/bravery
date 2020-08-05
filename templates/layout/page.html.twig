@@ -36,25 +36,42 @@
  * @see html.html.twig
  */
 #}
-{% set sidebar_class = page.sidebar ? 'one-sidebar' : '' %}
 
-<div id="page"{{ attributes.addClass(sidebar_class) }}>
+<div id="page"{{ attributes.addClass(classes) }}>
 
-    <header id="header" role="banner">
-      {{ page.header }}
-    </header>
+  <header id="header" role="banner">
+    {{ page.header }}
+  </header>
 
-    <main id="main" role="main">
-      <div id="content">
-        {{ page.content }}
+  <main id="main" role="main">
+    {% if page.banner %}
+      <div id="banner">
+        {{ page.banner }}
       </div>
+    {% endif %}
 
-      {% if page.sidebar %}
-        <aside id="sidebar" role="complementary">
-          {{ page.sidebar }}
-        </aside>
+    {% if page.content|render or page.sidebar|render %}
+      {% if page.sidebar|render %}
+        <div class="content__one-sidebar">
+          <aside id="sidebar" role="complementary">
+            {{ page.sidebar }}
+          </aside>
+
+          <div id="content">
+            {{ page.content }}
+          </div>
+        </div>
+      {% else %}
+        <div class="content__no-sidebar">
+          <div id="content">
+            {{ page.content }}
+          </div>
+        </div>
       {% endif %}
-    </main>
+    {% endif %}
+
+    {{ page.add_content }}
+  </main>
 
   <footer id="footer" role="contentinfo">
     {{ page.footer }}

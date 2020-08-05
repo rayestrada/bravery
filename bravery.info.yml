@@ -1,8 +1,8 @@
 name: bravery
 type: theme
-description: Custom bravery theme based on Classy
+description: ''
 core: 8.x
-version: '8.x-1.0'
+version: '8.0.0'
 
 # Defines the base theme for templates and classes, but we will remove the stylesheets
 base theme: classy
@@ -21,10 +21,12 @@ libraries:
 # Regions
 regions:
   header: Header
+  banner: Banner
   content: Content
   sidebar: Sidebar
+  add_content: 'Additional Content'
   footer: Footer
 
 # define custom css for wysiwyg
-#ckeditor_stylesheets:
+ckeditor_stylesheets:
   - build/css/wysiwyg.css

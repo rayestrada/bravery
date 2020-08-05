@@ -1,0 +1,37 @@
+/**
+ * @file
+ * Global field styles.
+ */
+
+.field__label {
+  @extend label;
+
+  .field--label-inline & {
+    margin-right: 1rem;
+
+    &:after {
+      content: ':';
+    }
+  }
+}
+
+// Inline styles.
+.field--label-inline {
+  display: flex;
+}
+
+.field--type-text-with-summary,
+.field--type-text-long {
+  > .field__items > .field__item > * {
+    @extend %trim;
+  }
+}
+
+%field {
+  @extend %trim;
+  margin: 2.2rem 0;
+
+  > .field__label {
+    margin-bottom: 1rem;
+  }
+}

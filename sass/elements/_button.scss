@@ -3,13 +3,12 @@
 * button and button link element styles.
 */
 
-button,
 %button {
   position: relative;
   z-index: 1;
   display: inline-block;
   box-sizing: border-box;
-  padding: 1.25rem 2.25rem;
+  padding: 2.4rem;
   border: 0;
   border-radius: 0;
   background-color: $black;
@@ -18,6 +17,9 @@ button,
   line-height: 1;
   appearance: none;
   cursor: pointer;
+  min-width: 20rem;
+  transition: all 300ms;
+  text-align: center;
 
   &[type="reset"] {
     background-color: $black;
@@ -33,13 +35,12 @@ button,
     background-color: lighten($black, 10);
   }
 
-  &.style--reset {
-    padding: 0;
-    background-color: transparent;
-    color: inherit;
+  .contextual &,
+  #toolbar-bar & {
+    min-width: 1rem;
   }
 }
 
-a.button-link {
+.button-link {
   @extend %button;
 }

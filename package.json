@@ -7,7 +7,7 @@
     "build": "gulp --production",
     "dev": "gulp",
     "gulp": "gulp",
-    "install": "gulp --production",
+    "lint": "gulp lint",
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
   },
   "repository": {},
@@ -29,7 +29,6 @@
     "gulp-csso": "^4.0.1",
     "gulp-eslint": "^6.0.0",
     "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^6.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",

@@ -6,14 +6,14 @@ global-styling:
 #  js:
 #    build/js/script.js: {}
   dependencies:
-#    - insidenps/webfont
-    - insidenps/admin-tabs
+#    - bravery/webfont
+    - bravery/admin-tasks
 
-admin-tabs:
+admin-tasks:
   version: 1.0
   css:
     theme:
-      build/css/tabs.css: {}
+      build/css/admin-tasks.css: {}
 
 #webfont:
 #  version: 1.0

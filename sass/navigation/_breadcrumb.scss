@@ -1,0 +1,24 @@
+/**
+* @file
+* Breadcrumb styles.
+*/
+
+.breadcrumb {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  ul,
+  ol {
+    @extend %list-reset;
+    display: inline;
+
+    li {
+      display: inline;
+
+      + li:before {
+        content: '/';
+      }
+    }
+  }
+}

@@ -19,9 +19,9 @@ form {
 }
 
 // Global label styles.
-label {
-  margin-bottom: 5px;
-  font-family: $sans;
+label,
+%label {
+  margin-bottom: 0.5rem;
 }
 
 // Global input styles.
@@ -38,14 +38,21 @@ input[type="week"],
 input[type="datetime"],
 input[type="datetime-local"],
 textarea {
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem;
   border: $border;
-  box-sizing: border-box;
-  font-family: $sans;
   background-color: $white;
+  width: 100%;
+
   @include placeholder {
-    color: lighten($black, 55);
+    color: rgba($black, 0.5);
   }
+}
+
+input[type="search"],
+input[type='text']#edit-search,
+input[type='text'][id^='edit-search--'] {
+  background: url("../../images/svg/search.svg") calc(100% - 1.5rem) 50% no-repeat;
+  padding-right: 3.5rem;
 }
 
 input[type="checkbox"],
@@ -54,65 +61,61 @@ input[type="radio"] {
 
   + label {
     position: relative;
-    display: inline;
-    box-sizing: border-box;
+    display: flex;
     font-weight: normal;
     cursor: pointer;
 
     &:before {
       display: inline-block;
-      width: 14px;
-      height: 14px;
-      margin-bottom: -2px;
-      margin-right: 8px;
+      width: 1.4rem;
+      height: 1.4rem;
+      margin-top: 0.1rem;
+      margin-right: 0.8rem;
       overflow: hidden;
       border: $border;
       content: '';
+      background-color: $white;
+    }
+  }
+
+  @include hover {
+    + label:before,
+    &:checked + label:before {
+      box-shadow: 0 0 2px 1px $black;
     }
   }
 
   &:checked + label {
     &:before {
-      background-color: $black;
+      background: $black url("../../images/svg/check.svg") center center no-repeat;
+      background-size: 1.2rem;
     }
   }
 }
 
 input[type="radio"] + label:before {
   border-radius: 50%;
+  background-image: none !important;
 }
 
 // Global select box styles.
-.selectlist {
-  position: relative;
-  display: inline-block;
-  border: $border;
-  background-clip: padding-box;
-  background-color: $white;
-}
-
 select {
   position: relative;
   z-index: 2;
   display: block;
-  box-sizing: border-box;
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem;
   -moz-padding-end: 10px;
   border: $border;
   border-radius: 0;
-  background-color: $white;
-  font-family: $sans;
+  background: $white url("../../images/svg/select.svg") calc(100% - 1.5rem) 50% no-repeat;
+  background-size: 1rem auto;
+  width: 100%;
   line-height: 1;
   appearance: none;
   cursor: pointer;
 
-  .selectlist & {
-    float: left;
-    margin: 0;
-    border: 0;
-    background: transparent;
-    background-color: transparent;
-    line-height: 14px;
+  &::ms-expand {
+    display: none;
   }
 }
 
@@ -126,4 +129,8 @@ input[type="reset"] {
 fieldset {
   border: $border;
   padding: 2rem;
+}
+
+legend {
+  @extend label;
 }

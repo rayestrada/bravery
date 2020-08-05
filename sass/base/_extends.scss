@@ -1,0 +1,53 @@
+/**
+ * @file
+ * Custom extends.
+ *
+ */
+
+// Use crisp font aliasing
+%crisp {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Auto scroll with smooth scrolling on touch devices.
+%scroll {
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Reset a list style.
+%list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+    list-style-image: none;
+  }
+}
+
+// Trims the margin for top/bottom.
+%trim {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+%container {
+  @include container;
+}
+
+// Positions the element to 100% the width and height of the relative container.
+%fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

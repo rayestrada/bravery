@@ -33,18 +33,6 @@ small,
   @extend %small;
 }
 
-// Define a link style.
-a {
-  text-decoration: underline;
-}
-
-// Define a horizontal rule style.
-hr {
-  border: 0;
-  border-bottom: $border;
-  margin: 3rem 0;
-}
-
 // Define a blockquote style.
 blockquote {
   font-size: 3.3rem;
@@ -72,12 +60,6 @@ figcaption,
 caption {
   @extend %small;
   margin: 1rem 0;
-}
-
-dl {
-  dd {
-    margin-left: 2rem;
-  }
 }
 
 .text-align-center,

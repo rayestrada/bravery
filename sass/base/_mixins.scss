@@ -1,46 +1,11 @@
 /**
  * @file
- * Custom Mixins and placeholders.
+ * Custom Mixins.
  *
  */
 
-// Use crisp font aliasing
-%crisp {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-// Auto scroll with smooth scrolling on touch devices.
-%scroll {
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-
-// Reset a list style.
-%list-reset {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    list-style-type: none;
-    list-style-image: none;
-  }
-}
-
-// Trims the margin for top/bottom.
-%trim {
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 // A global setting that can be used for controlling container widths.
-@mixin container() {
+@mixin container {
   position: relative;
   width: calc(100% - 4rem);
   margin: auto;
@@ -53,19 +18,6 @@
     width: calc(100% - 8rem);
     max-width: 136rem;
   }
-}
-
-%container {
-  @include container();
-}
-
-// Positions the element to 100% the width and height of the relative container.
-%fill {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 // Fully prefixed placeholder styling.
@@ -84,6 +36,14 @@
   }
 
   &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// Define a mixin for declaring hover and focus state together.
+@mixin hover {
+  &:hover,
+  &:focus {
     @content;
   }
 }

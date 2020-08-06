@@ -38,6 +38,21 @@ ul.tabs {
   }
 }
 
+// Fixing contextual link dropdowns if overriden in theme
+.contextual-links a {
+  border: 0 !important;
+  color: #000 !important;
+  letter-spacing: initial !important;
+  text-transform: none !important;
+  width: auto !important;
+  height: auto !important;
+
+  &:hover {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+}
+
 // Adding visible styling to unpublished nodes
 .node--unpublished {
   background-color: #fff4f4;

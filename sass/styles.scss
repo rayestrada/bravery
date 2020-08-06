@@ -12,19 +12,21 @@
 // Import all base styles
 @import "base/variables";
 @import "base/accessibility";
-@import "base/grid";
 @import "base/mixins";
+@import "base/extends";
 
 // Import all element styles
 @import "elements/typography";
 @import "elements/heading";
+@import "elements/a";
 @import "elements/button";
 @import "elements/table";
 @import "elements/form";
-@import "elements/accessibility";
 @import "elements/media";
 @import "elements/branding";
 @import "elements/fields";
+@import "elements/hr";
+@import "elements/list";
 
 // Import all navigation styles
 @import "navigation/main-menu";

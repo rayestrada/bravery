@@ -1,0 +1,14 @@
+/**
+ * @file
+ * Import site styles and create overrides for the wysiwyg.
+ */
+@import url("styles.css");
+body {
+  padding: 20px; }
+  body > *:first-child {
+    margin-top: 0; }
+
+drupal-entity[data-embed-button="video"] {
+  display: block; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInd5c2l3eWcuc2NzcyIsInd5c2l3eWcuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7RUNHRTtBREVGLHlCQUFZO0FBRVo7RUFDRSxhQUFhLEVBQUE7RUFEZjtJQUlJLGFBQWEsRUFBQTs7QUFJakI7RUFDRSxjQUFjLEVBQUEiLCJmaWxlIjoid3lzaXd5Zy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBmaWxlXG4gKiBJbXBvcnQgc2l0ZSBzdHlsZXMgYW5kIGNyZWF0ZSBvdmVycmlkZXMgZm9yIHRoZSB3eXNpd3lnLlxuICovXG5cbkBpbXBvcnQgdXJsKFwic3R5bGVzLmNzc1wiKTtcblxuYm9keSB7XG4gIHBhZGRpbmc6IDIwcHg7XG5cbiAgPiAqOmZpcnN0LWNoaWxkIHtcbiAgICBtYXJnaW4tdG9wOiAwO1xuICB9XG59XG5cbmRydXBhbC1lbnRpdHlbZGF0YS1lbWJlZC1idXR0b249XCJ2aWRlb1wiXSB7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuIiwiLyoqXG4gKiBAZmlsZVxuICogSW1wb3J0IHNpdGUgc3R5bGVzIGFuZCBjcmVhdGUgb3ZlcnJpZGVzIGZvciB0aGUgd3lzaXd5Zy5cbiAqL1xuQGltcG9ydCB1cmwoXCJzdHlsZXMuY3NzXCIpO1xuYm9keSB7XG4gIHBhZGRpbmc6IDIwcHg7IH1cbiAgYm9keSA+ICo6Zmlyc3QtY2hpbGQge1xuICAgIG1hcmdpbi10b3A6IDA7IH1cblxuZHJ1cGFsLWVudGl0eVtkYXRhLWVtYmVkLWJ1dHRvbj1cInZpZGVvXCJdIHtcbiAgZGlzcGxheTogYmxvY2s7IH1cbiJdfQ== */

@@ -16,7 +16,7 @@ table {
 
   td,
   th {
-    @include trim();
+    @extend %trim;
     padding: 1.5rem 2rem;
     text-align: left;
     min-width: 18rem;

@@ -103,6 +103,7 @@ rules:
   property-sort-order:
     - 0
     - ignore-custom-properties: false
+  # https://github.com/sds/scss-lint/blob/master/lib/scss_lint/linter/README.md#propertyunits
   property-units:
     - 1
     - global:

@@ -90,7 +90,7 @@ gulp.task('lint', gulp.parallel(['lint:sass', 'lint:js']));
 // Watch task runner
 gulp.task('watch', (done) => {
   if (!config.production) {
-    gulp.watch(config.src.sass, gulp.series('sass'));
+    gulp.watch(config.src.sass, gulp.series('sass', 'lint:sass'));
     gulp.watch(config.src.js, gulp.series('js'));
   }
   done();
